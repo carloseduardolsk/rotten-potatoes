@@ -2,6 +2,7 @@
 
 ## Ambiente Rodando 
 
+```bash
 NAME                          READY   STATUS    RESTARTS   AGE
 pod/mongodb-9f45bf784-xm7qt   1/1     Running   0          55s
 pod/web-7b95cb9599-wgcfb      1/1     Running   0          55s
