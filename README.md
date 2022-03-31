@@ -1,13 +1,21 @@
-# rotten-potatoes
+# Deployment projeto Rotten Potatoes em kubernetes
 
-## Configuração
+## Ambiente Rodando 
 
-MONGODB_DB => Nome do database
+NAME                          READY   STATUS    RESTARTS   AGE
+pod/mongodb-9f45bf784-xm7qt   1/1     Running   0          55s
+pod/web-7b95cb9599-wgcfb      1/1     Running   0          55s
 
-MONGODB_HOST => Host do MongoDB
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+service/kubernetes   ClusterIP   10.43.0.1       <none>        443/TCP        6m18s
+service/mongodb      ClusterIP   10.43.114.176   <none>        27017/TCP      55s
+service/web          NodePort    10.43.232.65    <none>        80:30000/TCP   55s
 
-MONGODB_PORT => Posta de acesso ao MongoDB
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/mongodb   1/1     1            1           55s
+deployment.apps/web       1/1     1            1           55s
 
-MONGODB_USERNAME => Usuário do MongoDB
+NAME                                DESIRED   CURRENT   READY   AGE
+replicaset.apps/mongodb-9f45bf784   1         1         1       55s
+replicaset.apps/web-7b95cb9599      1         1         1       55s
 
-MONGODB_PASSWORD => Senha do MongoDB
